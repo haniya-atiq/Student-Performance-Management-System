@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="theme-switcher">
+        <span>Choose Theme:</span>
+        <button type="button" id="blueTheme" class="theme-btn active">
+            <span class="color-dot blue-dot"></span>
+            Blue
+        </button>
+        <button type="button" id="greenTheme" class="theme-btn">
+            <span class="color-dot green-dot"></span>
+            Green
+        </button>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1>Student Performance Management System</h1>
+                <p>Academic Results & Performance Dashboard</p>
+            </div>
+            <div class="header-label">ADMIN PANEL</div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h2>Dashboard Overview</h2>
+                <p>Manage student records and monitor academic performance.</p>
+            </div>
+            <span class="session">Academic Management</span>
+        </section>
+
+        <section class="summary">
+
+            <div class="summary-card">
+                <div class="card-icon blue">01</div>
+                <div>
+                    <p>Total Students</p>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="card-icon green">02</div>
+                <div>
+                    <p>Class Average</p>
+                    <h2 id="classAverage">0%</h2>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="card-icon orange">03</div>
+                <div>
+                    <p>Top Student</p>
+                    <h2 id="topStudent">---</h2>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="card-icon purple">04</div>
+                <div>
+                    <p>Highest Percentage</p>
+                    <h2 id="highestPercentage">0%</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Student Registration</h2>
+                    <p>Enter student information and subject marks below.</p>
+                </div>
+            </div>
+
+            <form id="studentForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName"
+                        placeholder="Enter student name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="registrationNumber">Registration Number</label>
+                        <input type="text" id="registrationNumber"
+                        placeholder="Enter registration number" required>
+                    </div>
+
+                </div>
+
+                <h3 class="subject-heading">Subject Marks</h3>
+
+                <div class="marks-grid">
+
+                    <div class="input-group">
+                        <label for="programming">Programming</label>
+                        <input type="number" id="programming"
+                        placeholder="0 - 100" min="0" max="100" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mathematics">Mathematics</label>
+                        <input type="number" id="mathematics"
+                        placeholder="0 - 100" min="0" max="100" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="english">English</label>
+                        <input type="number" id="english"
+                        placeholder="0 - 100" min="0" max="100" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="database">Database</label>
+                        <input type="number" id="database"
+                        placeholder="0 - 100" min="0" max="100" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="networks">Computer Networks</label>
+                        <input type="number" id="networks"
+                        placeholder="0 - 100" min="0" max="100" required>
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="add-btn">+ Add Student</button>
+                    <button type="reset" class="reset-btn">Reset Form</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="results-section">
+
+            <div class="results-heading">
+                <div>
+                    <h2>Student Results</h2>
+                    <p>Complete academic records of registered students.</p>
+                </div>
+
+                <div class="table-actions">
+
+                    <input type="text" id="searchStudent"
+                    placeholder="Search by registration number">
+
+                    <button type="button" id="sortBtn" class="sort-btn">
+                        Sort by Percentage
+                    </button>
+
+                    <button type="button" id="clearBtn" class="clear-btn">
+                        Clear All
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Reg. No.</th>
+                            <th>Programming</th>
+                            <th>Mathematics</th>
+                            <th>English</th>
+                            <th>Database</th>
+                            <th>Networks</th>
+                            <th>Total</th>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                        <tr>
+                            <td colspan="12" class="empty-message">
+                                No student records available.
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Student Performance Management System</p>
+            <p>Academic Record Management Dashboard</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
